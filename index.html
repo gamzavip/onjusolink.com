@@ -297,14 +297,20 @@
         .faq-item h4 { font-size: 1.05rem; color: var(--text-main); margin-bottom: 8px; font-weight: 700; }
         .faq-item p { font-size: 0.95rem; color: var(--text-muted); }
 
-  /* 블로그 기사글 카드 UI (메인 사이트 카드 디자인과 일치) */
-        .footer-blog-wrapper {
+        /* 하단 투컬럼(유용한정보 & 대체사이트) 스타일 CSS 추가 및 수정 */
+        .footer-content-wrapper {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        .footer-blog-card {
+        .footer-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .footer-card {
             background-color: #ffffff;
             border-radius: 12px;
             padding: 30px;
@@ -312,9 +318,9 @@
             text-align: left;
         }
 
-        .footer-blog-card h3 {
+        .footer-card h3 {
             font-size: 1.2rem;
-            color: #1a73e8; /* 온주소링크 메인 테마 색상 */
+            color: #1a73e8;
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #f0f0f0;
@@ -323,21 +329,27 @@
             gap: 8px;
         }
 
-        .footer-blog-list {
+        /* 왼쪽: 기사글 리스트 스타일 */
+        .footer-info-list {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            padding-bottom: 20px;
         }
 
-        .footer-blog-list li {
+        .footer-info-list li {
             margin-bottom: 16px;
         }
 
-        .footer-blog-list li:last-child {
+        .footer-info-list li:last-child {
             margin-bottom: 0;
         }
 
-        .footer-blog-list a {
+        .footer-info-list a {
             color: #555;
             text-decoration: none;
             font-size: 1rem;
@@ -347,17 +359,47 @@
             transition: color 0.2s ease, transform 0.2s ease;
         }
 
-        /* 기사글 앞 텍스트 아이콘 */
-        .footer-blog-list a::before {
+        .footer-info-list a::before {
             content: "📄";
             font-size: 1.1rem;
         }
 
-        /* 마우스 호버 시 포인트 효과 */
-        .footer-blog-list a:hover {
+        .footer-info-list a:hover {
             color: #1a73e8;
             font-weight: 600;
-            transform: translateX(5px); /* 우측으로 살짝 이동하는 애니메이션 */
+            transform: translateX(5px);
+        }
+
+        /* 오른쪽: 대체사이트 리스트 (3단 버튼형) */
+        .footer-alt-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .footer-alt-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 10px 5px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .footer-alt-list a:hover {
+            color: #ffffff;
+            background-color: #1a73e8;
+            border-color: #1a73e8;
+            font-weight: 600;
         }
 
         /* 카피라이트 영역 (다크 톤 유지하여 페이지 끝을 명확히 함) */
@@ -375,13 +417,6 @@
             margin-top: 20px;
         }
 
-        /* 모바일 최적화 */
-        @media (max-width: 600px) {
-            .footer-blog-card { padding: 20px; }
-            .footer-blog-list a { font-size: 0.95rem; align-items: flex-start; }
-            .footer-blog-list a::before { margin-top: 2px; }
-        }
-
         @keyframes pulse {
             0% { opacity: 1; }
             50% { opacity: 0.8; }
@@ -392,12 +427,31 @@
         @media (max-width: 1024px) {
             .categories-wrapper { grid-template-columns: repeat(2, 1fr); }
         }
+        @media (max-width: 850px) {
+            .footer-content-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-alt-list {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .footer-info-list {
+                padding-bottom: 0;
+            }
+        }
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .categories-wrapper { grid-template-columns: 1fr; }
             .category-section { padding: 20px; }
             .link-item { padding: 14px 16px; }
             .seo-faq { padding: 25px 20px; }
+        }
+        @media (max-width: 480px) {
+            .footer-card { padding: 20px; }
+            .footer-alt-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-info-list a { font-size: 0.95rem; align-items: flex-start; }
+            .footer-info-list a::before { margin-top: 2px; }
         }
     </style>
 </head>
