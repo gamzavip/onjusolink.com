@@ -636,11 +636,16 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 온주소링크. All rights reserved.</p>
-        <p>본 페이지는 정보 제공을 목적으로 하며, 연결된 외부 사이트의 콘텐츠에 대해 책임지지 않습니다.</p>
-        <p class="footer-keywords">관련 검색어: 온주소링크, onjusolink, 주소모아, 주소콘, 주소아트, 주소허브, 주소와이, 여기여, 주소킹, 주소월드</p>
-    </footer>
+   <div id="footer-placeholder"></div>
+    <script>
+    // footer.html 파일을 불러와서 footer-placeholder 안에 넣는 코드
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('푸터를 불러오는 중 에러 발생:', error));
+    </script>
 
 </body>
 </html>
