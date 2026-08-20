@@ -1,31 +1,26 @@
-<!-- 블로그 최신글 UI를 위한 푸터 전용 스타일 (기존 <style> 안에 넣거나 푸터 위에 두셔도 무방합니다) -->
+<!-- 하단 블로그 및 푸터 스타일 -->
     <style>
-        footer { 
-            text-align: center; 
-            padding: 40px 20px 30px; 
-            background-color: #2c3e50; 
-            color: #ffffff; 
-            margin-top: 50px; 
-            font-size: 0.85rem; 
+        /* 블로그 기사글 카드 UI (메인 사이트 카드 디자인과 일치) */
+        .footer-blog-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        
-        /* 푸터 내 최신글(블로그) 섹션 스타일 */
-        .footer-blog-section {
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            padding: 20px 25px;
-            background-color: #1e2b38; /* 푸터보다 살짝 어두운 톤으로 분리감 형성 */
+
+        .footer-blog-card {
+            background-color: #ffffff;
             border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             text-align: left;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .footer-blog-section h3 {
-            color: #f39c12; /* 온주소링크 오렌지 포인트 컬러 */
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #34495e;
-            padding-bottom: 10px;
+
+        .footer-blog-card h3 {
+            font-size: 1.2rem;
+            color: #1a73e8; /* 온주소링크 메인 테마 색상 */
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -38,10 +33,7 @@
         }
 
         .footer-blog-list li {
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-bottom: 16px;
         }
 
         .footer-blog-list li:last-child {
@@ -49,68 +41,65 @@
         }
 
         .footer-blog-list a {
-            color: #bdc3c7;
+            color: #555;
             text-decoration: none;
-            font-size: 0.95rem;
-            display: block;
-            transition: color 0.2s;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding-right: 15px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
+        /* 기사글 앞 텍스트 아이콘 */
+        .footer-blog-list a::before {
+            content: "📄";
+            font-size: 1.1rem;
+        }
+
+        /* 마우스 호버 시 포인트 효과 */
         .footer-blog-list a:hover {
+            color: #1a73e8;
+            font-weight: 600;
+            transform: translateX(5px); /* 우측으로 살짝 이동하는 애니메이션 */
+        }
+
+        /* 카피라이트 영역 (다크 톤 유지하여 페이지 끝을 명확히 함) */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #2c3e50;
             color: #ffffff;
-            text-decoration: underline;
+            font-size: 0.85rem;
         }
 
-        .footer-blog-date {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            flex-shrink: 0;
+        .footer-keywords {
+            font-size: 0.75rem;
+            color: #88929b;
+            margin-top: 20px;
         }
 
-        .footer-keywords { 
-            font-size: 0.75rem; 
-            color: #88929b; 
-            margin-top: 20px; 
-        }
-
-        /* 모바일 대응 */
+        /* 모바일 최적화 */
         @media (max-width: 600px) {
-            .footer-blog-list li {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-            .footer-blog-list a {
-                white-space: normal; /* 모바일에서는 제목이 길면 줄바꿈 되도록 */
-            }
+            .footer-blog-card { padding: 20px; }
+            .footer-blog-list a { font-size: 0.95rem; align-items: flex-start; }
+            .footer-blog-list a::before { margin-top: 2px; }
         }
     </style>
 
-    <footer>
-        <!-- SEO 강화를 위한 최신 기사글 목록 -->
-        <div class="footer-blog-section">
+    <!-- 블로그 기사글 카드 영역 -->
+    <div class="footer-blog-wrapper">
+        <section class="footer-blog-card">
             <h3>📝 온주소링크 유용한 정보</h3>
             <ul class="footer-blog-list">
-                <li>
-                    <a href="/blog/how-to-bypass-blocked-sites-2026">1. 2026년 막힌 사이트 우회 접속하는 가장 쉬운 방법 (PC/모바일)</a>
-                    <span class="footer-blog-date">2026-08-20</span>
-                </li>
-                <li>
-                    <a href="/blog/safe-webtoon-ott-sites-guide">2. 무료 웹툰 및 무료TV 다시보기 사이트 안전하게 고르는 꿀팁</a>
-                    <span class="footer-blog-date">2026-08-16</span>
-                </li>
-                <li>
-                    <a href="/blog/how-to-verify-safe-toto-sites">3. 먹튀 없는 메이저 검증 사이트 구별법 3가지 (최신 가이드)</a>
-                    <span class="footer-blog-date">2026-08-12</span>
-                </li>
+                <li><a href="/blog/how-to-bypass-blocked-sites">막힌 사이트 우회 접속하는 가장 쉬운 방법 (PC/모바일)</a></li>
+                <li><a href="/blog/safe-webtoon-ott-sites-guide">무료 웹툰 및 무료TV 다시보기 사이트 안전하게 고르는 꿀팁</a></li>
+                <li><a href="/blog/how-to-verify-safe-toto-sites">먹튀 없는 메이저 검증 사이트 구별법 3가지 (최신 가이드)</a></li>
             </ul>
-        </div>
+        </section>
+    </div>
 
-        <!-- 기존 하단 카피라이트 및 키워드 -->
+    <!-- 하단 카피라이트 영역 -->
+    <footer>
         <p>&copy; 2026 온주소링크(OnJusoLink). All rights reserved.</p>
         <p>본 페이지는 정보 제공을 목적으로 하며, 연결된 외부 사이트의 콘텐츠에 대해 책임지지 않습니다.</p>
         <p class="footer-keywords">관련 검색어: 온주소링크, 주소모아, 주소콘, 주소아트, 주소허브, 주소와이, 여기여, 주소킹, 주소월드, 링크모아</p>
