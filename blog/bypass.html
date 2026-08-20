@@ -1,1 +1,965 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>막힌 사이트 우회 접속 완벽 가이드 & 시뮬레이터 (2026 최신) | 온주소링크</title>
+    
+    <!-- 검색엔진 크롤링 최적화 메타 태그 -->
+    <meta name="description" content="SNI 차단 원리 분석부터 GoodbyeDPI, 유니콘 HTTPS, DoH 브라우저 설정까지! 인터넷 속도 저하 없이 차단된 사이트에 무료로 우회 접속하는 최신 가이드 및 대화형 시뮬레이터입니다.">
+    <meta name="keywords" content="온주소링크, 막힌사이트우회, SNI우회, GoodbyeDPI, 유니콘HTTPS, DoH설정, Warning.or.kr, 주소모아, 주소콘, 주소아트, 주소허브, 주소와이, 여기여, 주소킹, 주소월드">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="온주소링크 보안기술연구팀">
+    <link rel="canonical" href="https://onjusolink.com/bypass-guide" />
 
+    <!-- Open Graph (소셜 미디어 및 메신저 공유 최적화) -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="막힌 사이트 우회 접속 완벽 가이드 & 대화형 시뮬레이터">
+    <meta property="og:description" content="인터넷 속도 100% 유지! SNI 파편화 및 DoH 암호화로 차단된 최신 사이트에 안전하게 우회 접속하세요.">
+    <meta property="og:url" content="https://onjusolink.com/bypass-guide">
+    <meta property="og:image" content="https://onjusolink.com/img/Gemini_Generated_Image_cjwpvucjwpvucjwp.webp">
+    <meta property="og:site_name" content="온주소링크">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="막힌 사이트 우회 접속 완벽 가이드 | 온주소링크">
+    <meta name="twitter:description" content="GoodbyeDPI, 유니콘 HTTPS, DoH 설정을 활용한 무료 우회 접속 진단기">
+    <meta name="twitter:image" content="https://onjusolink.com/img/Gemini_Generated_Image_cjwpvucjwpvucjwp.webp">
+
+    <!-- 파비콘 (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- 전문가용 통합 Schema.org JSON-LD 구조화 데이터 (SEO+GEO 최적화) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://onjusolink.com/bypass-guide#article",
+          "isPartOf": {
+            "@type": "WebPage",
+            "@id": "https://onjusolink.com/bypass-guide"
+          },
+          "headline": "막힌 사이트 우회 접속 대화형 시뮬레이터 & 실전 가이드",
+          "description": "국내 ISP의 SNI 필터링 차단 구조 시각화 및 속도 저하 없는 최적의 무료 우회 가이드",
+          "image": "https://onjusolink.com/img/Gemini_Generated_Image_cjwpvucjwpvucjwp.webp",
+          "inLanguage": "ko-KR",
+          "datePublished": "2026-01-15T09:00:00+09:00",
+          "dateModified": "2026-08-20T10:00:00+09:00",
+          "author": {
+            "@type": "Organization",
+            "name": "온주소링크 보안기술연구팀",
+            "url": "https://onjusolink.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "온주소링크",
+            "url": "https://onjusolink.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://onjusolink.com/img/Gemini_Generated_Image_sjk84asjk84asjk8.png"
+            }
+          },
+          "mainEntityOfPage": "https://onjusolink.com/bypass-guide"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://onjusolink.com/bypass-guide#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "우회 프로그램을 사용하면 해킹이나 개인정보 유출 위험이 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GoodbyeDPI나 유니콘 HTTPS 같은 SNI 파편화 프로그램은 패킷의 도메인 헤더 조각화만 수행할 뿐 외부 서버로 사용자의 데이터를 전송하지 않으므로 개인정보 유출 위험이 전혀 없습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "우회를 적용해도 여전히 사이트에 접속이 안 됩니다.",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "해당 사이트의 도메인(주소) 자체가 완전히 변경되었거나 서버가 차단된 경우일 수 있습니다. 브라우저 캐시를 삭제(Ctrl+Shift+R)하신 후 최신 주소를 확인하세요."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "모바일과 PC 중 어떤 방식이 더 빠른가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PC 환경에서는 GoodbyeDPI, 모바일 환경에서는 유니콘 HTTPS가 가장 빠릅니다. 두 방식 모두 VPN처럼 해외 거점 서버를 경유하지 않으므로 원래 본인의 인터넷 속도가 100% 그대로 유지됩니다."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://onjusolink.com/bypass-guide#howto",
+          "name": "GoodbyeDPI를 활용한 PC 차단 사이트 우회 방법",
+          "description": "속도 저하 없이 SNI 차단을 무료로 우회하는 방법",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "공식 GitHub에서 다운로드",
+              "text": "GoodbyeDPI 공식 Release 페이지에서 최신 zip 압축파일을 다운로드 후 압축 해제합니다."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "서비스 등록 배치파일 실행",
+              "text": "폴더 안의 service_install_russia_blacklisted.cmd 또는 1_run_all.cmd 파일 마우스 우클릭 후 관리자 권한으로 실행합니다."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "접속 테스트",
+              "text": "브라우저를 열고 기존에 차단되었던 사이트에 접속해봅니다."
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://onjusolink.com/bypass-guide#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "온주소링크",
+              "item": "https://onjusolink.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "막힌 사이트 우회 접속 가이드",
+              "item": "https://onjusolink.com/bypass-guide"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 font-black text-lg md:text-xl tracking-tight text-white hover:text-blue-400 transition" title="온주소링크 메인 페이지로 이동">
+                <span class="text-2xl" aria-hidden="true">🔗</span>
+                <span>온주소링크 <span class="text-xs font-normal text-blue-400 block md:inline md:ml-1">OnJusoLink</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300" aria-label="주요 메뉴">
+                <a href="#tldr" class="hover:text-blue-400 transition">핵심 요약</a>
+                <a href="#simulator" class="hover:text-blue-400 transition">차단 원리 시뮬레이터</a>
+                <a href="#wizard" class="hover:text-blue-400 transition">우회 방식 진단</a>
+                <a href="#matrix" class="hover:text-blue-400 transition">성능 비교</a>
+                <a href="#guides" class="hover:text-blue-400 transition">설치 가이드</a>
+                <a href="#faq" class="hover:text-blue-400 transition">FAQ</a>
+                <a href="/" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg font-bold text-xs transition">메인으로 돌아가기</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2 text-2xl focus:outline-none" aria-label="모바일 메뉴 열기/닫기">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-3 text-sm text-slate-300">
+            <a href="#tldr" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">0. 핵심 요약 (TL;DR)</a>
+            <a href="#simulator" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">1. 차단 원리 시뮬레이터</a>
+            <a href="#wizard" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">2. 나에게 맞는 우회 방식 진단</a>
+            <a href="#matrix" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">3. 우회 방법별 성능 비교</a>
+            <a href="#guides" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">4. 기기별 3초 설치 가이드</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">5. 자주 묻는 질문(FAQ)</a>
+            <a href="#related" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-blue-400">6. 함께 보면 좋은 글</a>
+            <a href="/" class="block text-center bg-blue-600 text-white py-2 rounded-lg font-bold text-xs mt-2">메인으로 돌아가기</a>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-12 flex-grow w-full">
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 text-white rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-block bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-bold px-3 py-1 rounded-full">
+                            2026 최신 차단 우회 분석 보고서 | 온주소링크
+                        </span>
+                        <span class="text-xs text-slate-400">최종 수정일: 2026.08.20</span>
+                    </div>
+                    <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight leading-tight">
+                        막힌 사이트 우회 접속 대화형 시뮬레이터 & 실전 가이드
+                    </h1>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        자주 방문하던 최신 유용한 사이트가 갑자기 <code class="bg-slate-800 px-2 py-0.5 rounded text-amber-300 font-mono text-xs">warning.or.kr</code>로 차단되었나요? 
+                        국내 ISP의 **SNI 필터링 메커니즘**을 시각적으로 직접 확인하고, 인터넷 속도 감소 없는 **최적의 무료 우회 방법**을 진단받아 접속 문제를 즉시 해결하세요. 차단 없이 검증된 접속 링크는 <a href="/" class="text-blue-300 underline underline-offset-4 hover:text-blue-200 font-semibold transition">온주소링크 최신 주소모아</a>에서 바로 확인하실 수 있습니다.
+                    </p>
+                </div>
+                <div class="lg:col-span-5">
+                    <figure>
+                        <img src="/img/Gemini_Generated_Image_cjwpvucjwpvucjwp.webp" alt="막힌 사이트 우회 접속 대화형 가이드 대표이미지" width="800" height="450" class="w-full h-auto rounded-xl shadow-lg border border-slate-700/60 object-cover" loading="eager" />
+                        <figcaption class="sr-only">막힌 사이트 우회 접속 가이드 메인 대표 이미지</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8 pt-6 border-t border-slate-700/60 relative z-10">
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 block">국내 ISP 차단율</span>
+                    <span class="text-lg md:text-xl font-bold text-rose-400">99.8% SNI 적용</span>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 block">속도 저하 없는 우회</span>
+                    <span class="text-lg md:text-xl font-bold text-emerald-400">파편화 기술 사용</span>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 block">추천 프로그램</span>
+                    <span class="text-lg md:text-xl font-bold text-blue-400">GoodbyeDPI / 유니콘</span>
+                </div>
+                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                    <span class="text-xs text-slate-400 block">무료 라이선스</span>
+                    <span class="text-lg md:text-xl font-bold text-amber-400">100% 오픈소스/무료</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 0: GEO-Targeted Executive Summary (TL;DR) -->
+        <section id="tldr" class="bg-amber-50/80 border border-amber-200 rounded-2xl p-5 md:p-6 shadow-sm space-y-4">
+            <div class="flex items-center gap-2">
+                <span class="bg-amber-500 text-white font-black text-xs px-2.5 py-1 rounded-md">TL;DR</span>
+                <h2 class="text-base md:text-lg font-bold text-amber-950">
+                    핵심 요약: 막힌 사이트 우회 접속 3초 결론
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm text-slate-800">
+                <div class="bg-white p-4 rounded-xl border border-amber-200/60 shadow-xs">
+                    <strong class="text-blue-700 font-bold block mb-1">💻 Windows PC 사용자</strong>
+                    <p class="text-slate-600"><strong>GoodbyeDPI</strong> 추천. 인터넷 속도 저하(0%)가 없으며, 1회 실행 후 백그라운드 자동 동작.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-amber-200/60 shadow-xs">
+                    <strong class="text-purple-700 font-bold block mb-1">📱 모바일 (안드로이드/iOS)</strong>
+                    <p class="text-slate-600"><strong>유니콘 HTTPS</strong> 추천. 원클릭 실행 가능하며 배터리 소모와 속도 감소가 전혀 없음.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-amber-200/60 shadow-xs">
+                    <strong class="text-emerald-700 font-bold block mb-1">⚙️ 앱 설치 없는 무설치 방식</strong>
+                    <p class="text-slate-600">크롬/엣지/사파리 브라우저의 <strong>DoH (DNS over HTTPS)</strong> 설정에서 Cloudflare(1.1.1.1) 활성화.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Interactive SNI Simulator -->
+        <section id="simulator" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <span aria-hidden="true">🧪</span> 1. SNI 차단 & 우회 원리 대화형 시뮬레이터
+                    </h2>
+                    <p class="text-slate-500 text-xs md:text-sm mt-1">
+                        패킷이 KT/SKT/LGU+ 차단 벽을 지날 때 발생하는 변화를 직접 확인해보세요.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2" id="sim-controls">
+                    <button onclick="setSimMode('blocked')" id="btn-blocked" class="sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-rose-600 text-white shadow">
+                        🚫 일반 접속 (차단됨)
+                    </button>
+                    <button onclick="setSimMode('sni')" id="btn-sni" class="sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
+                        ⚡ SNI 파편화 우회
+                    </button>
+                    <button onclick="setSimMode('doh')" id="btn-doh" class="sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
+                        🔒 DoH 암호화 우회
+                    </button>
+                </div>
+            </div>
+
+            <!-- Canvas Container -->
+            <div class="relative bg-slate-950 rounded-xl p-4 overflow-hidden shadow-inner">
+                <canvas id="packetCanvas" class="w-full h-48 md:h-64 block"></canvas>
+                <div id="sim-status-box" class="absolute bottom-3 left-3 right-3 bg-slate-900/90 border border-slate-700 backdrop-blur text-xs p-3 rounded-lg text-slate-300 flex justify-between items-center">
+                    <div>
+                        <span class="font-bold text-white block md:inline" id="sim-title">상태: 일반 HTTPS 접속 시도</span>
+                        <span id="sim-desc" class="text-slate-400 ml-0 md:ml-2">보안 연결 헤더(SNI)의 평문 도메인 이름을 ISP 장비가 감지합니다.</span>
+                    </div>
+                    <span id="sim-badge" class="px-2.5 py-1 rounded font-bold text-xs bg-rose-500/20 text-rose-400 border border-rose-500/30 whitespace-nowrap">
+                        Warning.or.kr 리다이렉트
+                    </span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 pt-2">
+                <article class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                    <h3 class="text-slate-800 font-bold block mb-1">1. 일반 접속 차단 원리</h3>
+                    HTTPS 암호화 통신 직전, TLS Handshake 과정의 ClientHello 메세지 속에 서버 이름(SNI)이 평문으로 노출되어 KISA 차단 서버로 리다이렉트됩니다.
+                </article>
+                <article class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                    <h3 class="text-slate-800 font-bold block mb-1">2. GoodbyeDPI / 유니콘 (추천)</h3>
+                    ClientHello 패킷을 1바이트 단위로 조각내어 송신합니다. ISP 차단 장비는 조각난 패킷을 도메인으로 인지하지 못해 차단을 통과합니다.
+                </article>
+                <article class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                    <h3 class="text-slate-800 font-bold block mb-1">3. DoH (DNS over HTTPS)</h3>
+                    도메인 주소를 변환하는 DNS 요청 자체를 암호화 터널로 송수신하여 ISP 차단망의 질의 감시를 완전히 무력화합니다.
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2: Interactive Recommendation Wizard -->
+        <section id="wizard" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                    <span aria-hidden="true">🧭</span> 2. 나에게 딱 맞는 우회 방식 3초 진단기
+                </h2>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">
+                    현재 사용하는 기기 환경과 우선순위를 선택하면 가장 적합한 우회 솔루션을 추천해 드립니다.
+                </p>
+            </div>
+
+            <!-- Wizard Form -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Step 1: OS Selection -->
+                <div class="space-y-3">
+                    <span class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                        STEP 1. 접속 기기를 선택하세요
+                    </span>
+                    <div class="grid grid-cols-2 gap-2" id="os-options">
+                        <button onclick="selectOS('win')" class="wiz-os-btn p-3 rounded-xl border-2 border-blue-600 bg-blue-50/50 text-slate-800 font-semibold text-xs md:text-sm flex items-center gap-2 transition" data-os="win">
+                            <span>💻</span> Windows PC
+                        </button>
+                        <button onclick="selectOS('mac')" class="wiz-os-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition" data-os="mac">
+                            <span>🍎</span> Mac / macOS
+                        </button>
+                        <button onclick="selectOS('android')" class="wiz-os-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition" data-os="android">
+                            <span>🤖</span> 안드로이드 폰
+                        </button>
+                        <button onclick="selectOS('ios')" class="wiz-os-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition" data-os="ios">
+                            <span>📱</span> 아이폰 / iPad
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Priority Selection -->
+                <div class="space-y-3">
+                    <span class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                        STEP 2. 가장 중요한 요소를 선택하세요
+                    </span>
+                    <div class="grid grid-cols-2 gap-2" id="pref-options">
+                        <button onclick="selectPref('speed')" class="wiz-pref-btn p-3 rounded-xl border-2 border-blue-600 bg-blue-50/50 text-slate-800 font-semibold text-xs md:text-sm flex items-center gap-2 transition" data-pref="speed">
+                            <span>🚀</span> 100% 최고 속도 유지
+                        </button>
+                        <button onclick="selectPref('noinst')" class="wiz-pref-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition" data-pref="noinst">
+                            <span>⚙️</span> 무설치 (설정만)
+                        </button>
+                        <button onclick="selectPref('simple')" class="wiz-pref-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition" data-pref="simple">
+                            <span>👍</span> 가장 쉬운 앱 원클릭
+                        </button>
+                        <button onclick="selectPref('security')" class="wiz-pref-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition" data-pref="security">
+                            <span>🛡️</span> 완벽한 IP 익명성
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wizard Result Card -->
+            <div id="wiz-result" class="bg-gradient-to-r from-blue-900 to-slate-900 text-white rounded-xl p-5 md:p-6 shadow-md relative overflow-hidden">
+                <div class="relative z-10 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-blue-500 text-white text-xs font-black px-2.5 py-0.5 rounded">최적 솔루션 추천</span>
+                        <h3 id="res-title" class="text-lg md:text-xl font-bold">GoodbyeDPI (Windows 전용)</h3>
+                    </div>
+                    <p id="res-desc" class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                        인터넷 속도 저하(PING 증가)가 전혀 없이 background 서비스로 작동하는 최강의 SNI 파편화 우회 프로그램입니다.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3 items-center">
+                        <a id="res-link" href="#guides" onclick="showTab('tab-goodbyedpi')" class="bg-blue-500 hover:bg-blue-400 text-white font-bold text-xs px-4 py-2 rounded-lg transition inline-flex items-center gap-1.5">
+                            <span>📥</span> <span>설치 가이드 보러가기</span>
+                        </a>
+                        <span id="res-tag" class="text-xs text-blue-300">속도 저하: 0% | 비용: 평생 무료</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Performance Comparison Matrix -->
+        <section id="matrix" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                    <span aria-hidden="true">📊</span> 3. 우회 방법별 성능 및 안전성 종합 비교
+                </h2>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">
+                    VPN, SNI 파편화(유니콘/GoodbyeDPI), DoH의 항목별 지표 비교입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <!-- Radar Chart -->
+                <div class="lg:col-span-5 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="relative w-full h-64 max-w-md mx-auto">
+                        <canvas id="matrixChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- SEO Accessible Feature Table -->
+                <div class="lg:col-span-7 overflow-x-auto">
+                    <table class="w-full text-xs text-left text-slate-600 border-collapse" summary="우회 방법별 성능, 속도, 보안성 비교 표">
+                        <caption class="sr-only">우회 방법별 성능 및 안전성 종합 비교</caption>
+                        <thead class="text-xs text-slate-700 bg-slate-100 uppercase">
+                            <tr>
+                                <th scope="col" class="p-2.5 rounded-l-lg">구분</th>
+                                <th scope="col" class="p-2.5 text-blue-600">SNI 파편화</th>
+                                <th scope="col" class="p-2.5 text-purple-600">브라우저 DoH</th>
+                                <th scope="col" class="p-2.5 text-rose-600">무료 VPN</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <th scope="row" class="p-2.5 font-bold text-slate-800">대표 프로그램</th>
+                                <td class="p-2.5 font-semibold text-blue-600">GoodbyeDPI / 유니콘</td>
+                                <td class="p-2.5">Chrome/Edge/Safari</td>
+                                <td class="p-2.5">일반 무료 VPN 앱</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-2.5 font-bold text-slate-800">속도 저하</th>
+                                <td class="p-2.5 text-emerald-600 font-bold">없음 (0%)</td>
+                                <td class="p-2.5 text-emerald-600 font-bold">없음 (0%)</td>
+                                <td class="p-2.5 text-rose-500 font-bold">심함 (30~70%)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-2.5 font-bold text-slate-800">IP 우회/익명성</th>
+                                <td class="p-2.5">X (본인 IP 유지)</td>
+                                <td class="p-2.5">X (본인 IP 유지)</td>
+                                <td class="p-2.5 text-emerald-600 font-bold">O (해외 IP 변환)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-2.5 font-bold text-slate-800">보안성 / 위험도</th>
+                                <td class="p-2.5 text-emerald-600 font-bold">안전 (로컬 동작)</td>
+                                <td class="p-2.5 text-emerald-600 font-bold">안전 (구글/Cloudflare)</td>
+                                <td class="p-2.5 text-rose-500 font-bold">위험 (로그 수집)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-2.5 font-bold text-slate-800">추천 대상</th>
+                                <td class="p-2.5 font-bold">모든 일반 사용자</td>
+                                <td class="p-2.5">앱 설치 싫은 유저</td>
+                                <td class="p-2.5">해외 IP 필요시만</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Interactive Installation Guides -->
+        <section id="guides" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                    <span aria-hidden="true">⚡</span> 4. 기기별 3초 설치 및 설정 대화형 가이드
+                </h2>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">
+                    원하시는 우회 방법을 선택한 후 단계별로 따라 진행해 보세요.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex border-b border-slate-200 space-x-2 md:space-x-4 text-xs md:text-sm font-bold overflow-x-auto">
+                <button onclick="showTab('tab-goodbyedpi')" id="btn-tab-goodbyedpi" class="guide-tab-btn py-2.5 px-3 md:px-4 border-b-2 border-blue-600 text-blue-600 whitespace-nowrap transition">
+                    💻 GoodbyeDPI (PC)
+                </button>
+                <button onclick="showTab('tab-unicorn')" id="btn-tab-unicorn" class="guide-tab-btn py-2.5 px-3 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap transition">
+                    🦄 유니콘 HTTPS (모바일)
+                </button>
+                <button onclick="showTab('tab-doh')" id="btn-tab-doh" class="guide-tab-btn py-2.5 px-3 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap transition">
+                    🌐 브라우저 DoH (무설치)
+                </button>
+            </div>
+
+            <!-- Tab Content 1: GoodbyeDPI -->
+            <div id="tab-goodbyedpi" class="guide-tab-content space-y-4">
+                <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100 text-xs md:text-sm text-slate-700">
+                    <strong class="text-blue-900 font-bold block mb-1">💡 GoodbyeDPI란?</strong>
+                    러시아 개발자 ValadikNoDN이 개발한 무료 오픈소스 프로그램으로, 윈도우 환경에서 속도 감소 없이 SNI 차단을 무력화하는 가장 깔끔한 방법입니다.
+                </div>
+
+                <ol class="space-y-3 text-xs md:text-sm text-slate-700">
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">1</span>
+                        <div>
+                            <strong>공식 GitHub에서 다운로드</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">GoodbyeDPI 공식 Release 페이지에서 최신 zip 압축파일을 다운로드 후 압축 해제합니다.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">2</span>
+                        <div>
+                            <strong>서비스 등록 배치파일 실행</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">폴더 안의 <code class="bg-slate-200 px-1 py-0.5 rounded text-rose-600 font-mono">service_install_russia_blacklisted.cmd</code> 또는 <code class="bg-slate-200 px-1 py-0.5 rounded text-rose-600 font-mono">1_run_all.cmd</code> 파일에서 마우스 우클릭 ➔ <strong>[관리자 권한으로 실행]</strong>을 클릭합니다.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">3</span>
+                        <div>
+                            <strong>접속 테스트</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">브라우저를 열고 기존에 차단되었던 사이트에 접속해봅니다. 재부팅 후에도 백그라운드에서 자동 유지됩니다.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Tab Content 2: Unicorn HTTPS -->
+            <div id="tab-unicorn" class="guide-tab-content hidden space-y-4">
+                <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100 text-xs md:text-sm text-slate-700">
+                    <strong class="text-blue-900 font-bold block mb-1">🦄 유니콘 HTTPS란?</strong>
+                    국내 기업 유니콘에서 개발한 무료 우회 앱입니다. 스마트폰 로컬에서 패킷 조작만 수행하므로 배터리 소모와 속도 감소가 거의 발생하지 않습니다.
+                </div>
+
+                <ol class="space-y-3 text-xs md:text-sm text-slate-700">
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">1</span>
+                        <div>
+                            <strong>스토어에서 앱 다운로드</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">구글 플레이스토어 또는 애플 앱스토어에서 <strong>'유니콘 HTTPS'</strong>를 검색하여 무료 설치합니다.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">2</span>
+                        <div>
+                            <strong>스위치 활성화 (VPN 프로필 허용)</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">앱 중앙의 거대한 스위치 버튼을 누른 후, 최초 1회 나타나는 '로컬 VPN 연결 허용' 팝업에서 [확인]을 누릅니다.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Tab Content 3: DoH -->
+            <div id="tab-doh" class="guide-tab-content hidden space-y-4">
+                <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100 text-xs md:text-sm text-slate-700">
+                    <strong class="text-blue-900 font-bold block mb-1">🌐 크롬/엣지 DoH 설정</strong>
+                    별도의 우회 앱을 설치하고 싶지 않을 때, 브라우저 자체 암호화 DNS 기능을 활성화하여 즉시 접속하는 방법입니다.
+                </div>
+
+                <ol class="space-y-3 text-xs md:text-sm text-slate-700">
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">1</span>
+                        <div>
+                            <strong>크롬 설정 ➔ 보안 이동</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">Chrome 우측 상단 메뉴(⋮) ➔ [설정] ➔ [개인정보 및 보안] ➔ [보안] 메뉴로 들어갑니다.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="bg-blue-600 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 text-xs">2</span>
+                        <div>
+                            <strong>보안 연결 사용 (Cloudflare 1.1.1.1 선택)</strong>
+                            <p class="text-slate-500 text-xs mt-0.5">'보안 연결 사용' 항목을 활성화한 뒤 [다음 공급업체 사용]을 체크하고 <strong>Cloudflare (1.1.1.1)</strong>를 선택합니다.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section 5: FAQ Section -->
+        <section id="faq" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                    <span aria-hidden="true">❓</span> 5. 자주 묻는 질문 (FAQ)
+                </h2>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">
+                    사이트 차단 우회 시 사용자가 자주 궁금해하는 질문 모음입니다.
+                </p>
+            </div>
+
+            <div class="space-y-3" id="faq-list">
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left p-4 bg-slate-50 hover:bg-slate-100 text-xs md:text-sm font-bold text-slate-800 flex justify-between items-center transition">
+                        <span>Q. 우회 프로그램을 사용하면 해킹이나 개인정보 유출 위험이 있나요?</span>
+                        <span class="faq-icon text-slate-400" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-ans hidden p-4 text-xs md:text-sm text-slate-600 bg-white border-t border-slate-100 space-y-2">
+                        <p>GoodbyeDPI나 유니콘 HTTPS 같은 SNI 파편화 프로그램은 패킷의 도메인 헤더 조각화만 수행할 뿐 외부 서버로 사용자의 데이터를 전송하지 않으므로 <strong>개인정보 유출 위험이 전혀 없습니다.</strong></p>
+                        <p class="text-slate-500">반면 출처가 불분명한 '무료 VPN'은 사용자의 통신 로그를 판매할 가능성이 있으므로 검증된 소프트웨어를 사용하는 것이 안전합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left p-4 bg-slate-50 hover:bg-slate-100 text-xs md:text-sm font-bold text-slate-800 flex justify-between items-center transition">
+                        <span>Q. 우회를 적용해도 여전히 사이트에 접속이 안 됩니다.</span>
+                        <span class="faq-icon text-slate-400" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-ans hidden p-4 text-xs md:text-sm text-slate-600 bg-white border-t border-slate-100 space-y-2">
+                        <p>해당 사이트의 도메인(주소) 자체가 완전히 변경되었거나 서버가 차단된 경우일 수 있습니다. 브라우저 캐시를 삭제(Ctrl+Shift+R)하신 후 최신 주소를 확인하세요.</p>
+                        <p>유용한 최신 링크나 다시보기 정보는 <a href="/blog/ott-guide" class="text-blue-600 font-bold underline">웹툰·OTT 사이트 안전 가이드</a>에서 상세히 확인하실 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left p-4 bg-slate-50 hover:bg-slate-100 text-xs md:text-sm font-bold text-slate-800 flex justify-between items-center transition">
+                        <span>Q. 모바일과 PC 중 어떤 방식이 더 빠른가요?</span>
+                        <span class="faq-icon text-slate-400" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-ans hidden p-4 text-xs md:text-sm text-slate-600 bg-white border-t border-slate-100 space-y-2">
+                        <p>PC 환경에서는 GoodbyeDPI, 모바일 환경에서는 유니콘 HTTPS가 가장 빠릅니다. 두 방식 모두 VPN처럼 해외 거점 서버를 경유하지 않으므로 <strong>원래 본인의 인터넷 속도가 100% 그대로 유지됩니다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Recommended Related Articles -->
+        <section id="related" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                    <span aria-hidden="true">📌</span> 6. 함께 보면 좋은 가이드
+                </h2>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">
+                    온주소링크 검증팀이 제공하는 최신 정보 콘텐츠입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="/blog/ott-guide" class="group block p-5 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition bg-slate-50/50">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">인기 가이드</span>
+                        <span class="text-slate-400 group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 group-hover:text-blue-600 text-sm md:text-base transition">
+                        무료 웹툰 및 무료TV 다시보기 사이트 안전하게 고르는 꿀팁
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                        피싱 위험 없이 안전하게 스트리밍 사이트와 주소모아 사이트를 선별하고 이용하는 최신 노하우를 정리했습니다.
+                    </p>
+                </a>
+
+                <a href="/blog/verify" class="group block p-5 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition bg-slate-50/50">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-700 px-2.5 py-0.5 rounded-full">안전 검증</span>
+                        <span class="text-slate-400 group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 group-hover:text-blue-600 text-sm md:text-base transition">
+                        먹튀 없는 메이저 검증 사이트 구별법 3가지 (최신 가이드)
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+                        검증 커뮤니티 및 보증업체를 슬기롭게 구분하고 안전하게 이용하는 필수 확인 요소 체크리스트입니다.
+                    </p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-8 px-4 text-xs text-center space-y-3">
+        <div class="max-w-6xl mx-auto space-y-2">
+            <p class="font-semibold text-slate-300">&copy; 2026 온주소링크(OnJusoLink). All rights reserved.</p>
+            <p class="text-slate-500 max-w-2xl mx-auto">
+                본 페이지는 인터넷 자유와 개인정보 보호를 위한 정보 제공 목적의 기술적 교육 자료이며, 외부 연결 링크의 콘텐츠에 대해 직접적인 책임을 지지 않습니다.
+            </p>
+            <p class="text-slate-600 text-[11px] pt-2">
+                연관 검색어: 온주소링크, 막힌사이트우회, SNI우회, GoodbyeDPI, 유니콘HTTPS, DoH설정, 주소모아, 주소콘, 주소아트, 주소허브, 주소와이, 여기여, 주소킹, 주소월드
+            </p>
+        </div>
+    </footer>
+
+    <!-- Client JavaScript Logic -->
+    <script>
+        // Canvas Simulator Logic
+        const canvas = document.getElementById('packetCanvas');
+        const ctx = canvas ? canvas.getContext('2d') : null;
+        let currentMode = 'blocked';
+        let animFrameId = null;
+        let packets = [];
+
+        function resizeCanvas() {
+            if (canvas && canvas.parentElement) {
+                canvas.width = canvas.parentElement.clientWidth - 32;
+                canvas.height = canvas.parentElement.clientHeight - 32;
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function setSimMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.sim-btn').forEach(btn => {
+                btn.className = "sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200";
+            });
+
+            const activeBtn = document.getElementById(`btn-${mode}`);
+            const titleEl = document.getElementById('sim-title');
+            const descEl = document.getElementById('sim-desc');
+            const badgeEl = document.getElementById('sim-badge');
+
+            if (mode === 'blocked') {
+                if (activeBtn) activeBtn.className = "sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-rose-600 text-white shadow";
+                if (titleEl) titleEl.textContent = "상태: 일반 HTTPS 접속 시도";
+                if (descEl) descEl.textContent = "보안 연결 헤더(SNI)의 평문 도메인 이름을 ISP 장비가 감지합니다.";
+                if (badgeEl) {
+                    badgeEl.textContent = "Warning.or.kr 차단됨";
+                    badgeEl.className = "px-2.5 py-1 rounded font-bold text-xs bg-rose-500/20 text-rose-400 border border-rose-500/30 whitespace-nowrap";
+                }
+            } else if (mode === 'sni') {
+                if (activeBtn) activeBtn.className = "sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow";
+                if (titleEl) titleEl.textContent = "상태: SNI 파편화 (GoodbyeDPI / 유니콘)";
+                if (descEl) descEl.textContent = "헤더를 1바이트 조각으로 잘라 송신하여 ISP 차단 장비를 통과합니다.";
+                if (badgeEl) {
+                    badgeEl.textContent = "정상 연결 성공 (속도 100%)";
+                    badgeEl.className = "px-2.5 py-1 rounded font-bold text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap";
+                }
+            } else if (mode === 'doh') {
+                if (activeBtn) activeBtn.className = "sim-btn px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow";
+                if (titleEl) titleEl.textContent = "상태: DoH (DNS over HTTPS)";
+                if (descEl) descEl.textContent = "도메인 조회 요청 패킷 자체를 암호화 터널로 우회합니다.";
+                if (badgeEl) {
+                    badgeEl.textContent = "정상 연결 성공 (암호화)";
+                    badgeEl.className = "px-2.5 py-1 rounded font-bold text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30 whitespace-nowrap";
+                }
+            }
+            initPackets();
+        }
+
+        function initPackets() {
+            if (!canvas) return;
+            packets = [];
+            for (let i = 0; i < 4; i++) {
+                packets.push({
+                    x: (i * (canvas.width / 4)),
+                    y: canvas.height / 2,
+                    speed: 2 + Math.random(),
+                    split: currentMode === 'sni',
+                    encrypted: currentMode === 'doh'
+                });
+            }
+        }
+
+        function drawSim() {
+            if (!ctx || !canvas) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const wallX = canvas.width * 0.55;
+
+            // Draw ISP Blocking Wall
+            ctx.strokeStyle = currentMode === 'blocked' ? '#f43f5e' : '#475569';
+            ctx.lineWidth = 4;
+            ctx.setLineDash([6, 6]);
+            ctx.beginPath();
+            ctx.moveTo(wallX, 20);
+            ctx.lineTo(wallX, canvas.height - 20);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Text ISP Firewall Label
+            ctx.fillStyle = currentMode === 'blocked' ? '#f43f5e' : '#94a3b8';
+            ctx.font = '10px Pretendard';
+            ctx.fillText('국내 ISP 차단벽 (SNI)', wallX - 35, 15);
+
+            // Animate Packets
+            packets.forEach(p => {
+                p.x += p.speed;
+                if (p.x > canvas.width) p.x = 0;
+
+                // Collision with wall in blocked mode
+                if (currentMode === 'blocked' && p.x > wallX - 10 && p.x < wallX + 10) {
+                    ctx.fillStyle = '#f43f5e';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillText('X', p.x - 3, p.y + 3);
+                } else if (p.split) {
+                    ctx.fillStyle = '#10b981';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y - 8, 4, 0, Math.PI * 2);
+                    ctx.arc(p.x + 6, p.y + 8, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                } else if (p.encrypted) {
+                    ctx.fillStyle = '#3b82f6';
+                    ctx.fillRect(p.x - 8, p.y - 8, 16, 16);
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillText('🔒', p.x - 6, p.y + 4);
+                } else {
+                    ctx.fillStyle = '#f43f5e';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 7, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+
+            animFrameId = requestAnimationFrame(drawSim);
+        }
+
+        initPackets();
+        drawSim();
+
+        // Wizard Diagnosis Logic
+        let selectedOS = 'win';
+        let selectedPref = 'speed';
+
+        const wizData = {
+            'win-speed': { title: 'GoodbyeDPI (Windows)', desc: '윈도우 환경에서 속도 감소 0%로 통신하는 가장 강력한 백그라운드 프로그램입니다.', tag: '속도: 100% | 비용: 무료', link: 'tab-goodbyedpi' },
+            'win-noinst': { title: '크롬 / 엣지 DoH 설정', desc: '프로그램 설치 없이 브라우저 보안 옵션 변경만으로 즉시 우회합니다.', tag: '설치: 불필요 | 난이도: 매우 쉬움', link: 'tab-doh' },
+            'win-simple': { title: '유니콘 HTTPS for Windows', desc: '클릭 한번으로 켜고 끌 수 있는 가장 직관적인 GUI 우회 프로그램입니다.', tag: '편의성: 최상 | 속도: 100%', link: 'tab-goodbyedpi' },
+            'win-security': { title: 'NordVPN / ExpressVPN', desc: 'IP 주소 자체를 해외로 완전 변환하여 익명성을 보장합니다.', tag: 'IP 우회: 가능 | 속도: 약 10~20% 감소', link: 'tab-doh' },
+
+            'mac-speed': { title: '유니콘 HTTPS for Mac', desc: 'macOS 환경에서 가장 안정적이고 깔끔하게 작동하는 우회 앱입니다.', tag: 'macOS 지원 | 속도: 100%', link: 'tab-unicorn' },
+            'mac-noinst': { title: 'Safari / Chrome DoH 설정', desc: 'Mac 브라우저 내 암호화 DNS 옵션을 켜서 설치 없이 우회합니다.', tag: '무설치 | 보안성 우수', link: 'tab-doh' },
+
+            'android-speed': { title: '유니콘 HTTPS (안드로이드)', desc: '스마트폰 로컬 VPN 기술로 속도 저하 없이 우회합니다.', tag: '모바일 1위 | 배터리 소모 없음', link: 'tab-unicorn' },
+            'android-simple': { title: '1.1.1.1 (Cloudflare WARP)', desc: '원클릭 토글 버튼으로 암호화 DNS 터널을 생성합니다.', tag: '글로벌 CDN | 원클릭', link: 'tab-unicorn' },
+
+            'ios-speed': { title: '유니콘 HTTPS (iOS)', desc: '아이폰/아이패드 환경에 최적화된 우회 앱입니다.', tag: 'iOS 전용 | 속도 저하 0%', link: 'tab-unicorn' }
+        };
+
+        function selectOS(os) {
+            selectedOS = os;
+            document.querySelectorAll('.wiz-os-btn').forEach(btn => {
+                btn.className = "wiz-os-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition";
+            });
+            const active = document.querySelector(`.wiz-os-btn[data-os="${os}"]`);
+            if (active) active.className = "wiz-os-btn p-3 rounded-xl border-2 border-blue-600 bg-blue-50/50 text-slate-800 font-semibold text-xs md:text-sm flex items-center gap-2 transition";
+            updateWizResult();
+        }
+
+        function selectPref(pref) {
+            selectedPref = pref;
+            document.querySelectorAll('.wiz-pref-btn').forEach(btn => {
+                btn.className = "wiz-pref-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs md:text-sm flex items-center gap-2 hover:border-slate-300 transition";
+            });
+            const active = document.querySelector(`.wiz-pref-btn[data-pref="${pref}"]`);
+            if (active) active.className = "wiz-pref-btn p-3 rounded-xl border-2 border-blue-600 bg-blue-50/50 text-slate-800 font-semibold text-xs md:text-sm flex items-center gap-2 transition";
+            updateWizResult();
+        }
+
+        function updateWizResult() {
+            const key = `${selectedOS}-${selectedPref}`;
+            const res = wizData[key] || wizData['win-speed'];
+            const titleEl = document.getElementById('res-title');
+            const descEl = document.getElementById('res-desc');
+            const tagEl = document.getElementById('res-tag');
+            const linkEl = document.getElementById('res-link');
+
+            if (titleEl) titleEl.textContent = res.title;
+            if (descEl) descEl.textContent = res.desc;
+            if (tagEl) tagEl.textContent = res.tag;
+            if (linkEl) linkEl.onclick = () => showTab(res.link);
+        }
+
+        // Chart.js Matrix Init
+        window.addEventListener('DOMContentLoaded', () => {
+            const ctxMatrix = document.getElementById('matrixChart');
+            if (ctxMatrix && typeof Chart !== 'undefined') {
+                new Chart(ctxMatrix, {
+                    type: 'radar',
+                    data: {
+                        labels: ['접속 속도', '설치 용이성', '보안/안전성', 'IP 익명성', '모바일 지원'],
+                        datasets: [
+                            {
+                                label: 'SNI 파편화 (유니콘/GoodbyeDPI)',
+                                data: [100, 85, 95, 20, 90],
+                                borderColor: '#2563eb',
+                                backgroundColor: 'rgba(37, 99, 235, 0.15)',
+                                borderWidth: 2
+                            },
+                            {
+                                label: '브라우저 DoH',
+                                data: [100, 95, 90, 20, 70],
+                                borderColor: '#9333ea',
+                                backgroundColor: 'rgba(147, 51, 234, 0.15)',
+                                borderWidth: 2
+                            },
+                            {
+                                label: '무료 VPN',
+                                data: [40, 70, 30, 100, 85],
+                                borderColor: '#f43f5e',
+                                backgroundColor: 'rgba(244, 63, 94, 0.15)',
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                min: 0,
+                                max: 100,
+                                ticks: { display: false }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { boxWidth: 10, font: { size: 10 } }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        // Tab switching logic
+        function showTab(tabId) {
+            document.querySelectorAll('.guide-tab-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('.guide-tab-btn').forEach(b => {
+                b.className = "guide-tab-btn py-2.5 px-3 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap transition";
+            });
+
+            const activeTab = document.getElementById(tabId);
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeTab) activeTab.classList.remove('hidden');
+            if (activeBtn) activeBtn.className = "guide-tab-btn py-2.5 px-3 md:px-4 border-b-2 border-blue-600 text-blue-600 whitespace-nowrap transition";
+        }
+
+        // FAQ Toggle Logic
+        function toggleFAQ(btn) {
+            const ans = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            if (ans && ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                if (icon) icon.textContent = '▲';
+            } else if (ans) {
+                ans.classList.add('hidden');
+                if (icon) icon.textContent = '▼';
+            }
+        }
+
+        // Mobile Menu Toggle Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            if (menu && menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                if (btn) btn.textContent = '✕';
+            } else if (menu) {
+                menu.classList.add('hidden');
+                if (btn) btn.textContent = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
