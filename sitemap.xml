@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- 1. 메인 홈페이지 -->
-  <url>
-    <loc>https://onjusolink.com/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- 2. 블로그 기사글: 우회 가이드 -->
-  <url>
-    <loc>https://onjusolink.com/blog/bypass</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 3. 대체사이트 랜딩페이지: 주소허브 -->
-  <url>
-    <loc>https://onjusolink.com/pages/jusohub</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 4. 대체사이트 랜딩페이지: 주소아트 -->
-  <url>
-    <loc>https://onjusolink.com/pages/jusoart</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<url>
+<loc>https://onjusolink.com/</loc>
+<lastmod>2026-08-21T13:06:01+09:00</lastmod>
+</url>
+<url>
+<loc>https://onjusolink.com/blog/bypass</loc>
+<lastmod>2026-08-20T22:37:42+09:00</lastmod>
+</url>
+<url>
+<loc>https://onjusolink.com/pages/jusoart</loc>
+<lastmod>2026-08-21T08:55:09+09:00</lastmod>
+</url>
+<url>
+<loc>https://onjusolink.com/pages/jusohub</loc>
+<lastmod>2026-08-21T08:55:51+09:00</lastmod>
+</url>
 </urlset>
